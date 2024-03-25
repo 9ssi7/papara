@@ -7,10 +7,10 @@ This library makes it easy to interact with the Papara API.
 - [x] Account API
 - [x] User Verification API 
 - [x] Pay with Papara API 
-- [ ] Pay with Vpos API 
-- [ ] Pay with QR API 
-- [ ] Pay with Link API 
-- [ ] Mass Payment API
+- [ ] [Pay with Vpos API](https://github.com/9ssi7/papara/issues/1)
+- [ ] [Pay with QR API](https://github.com/9ssi7/papara/issues/2)
+- [ ] [Pay with Link API](https://github.com/9ssi7/papara/issues/3) 
+- [ ] [Mass Payment API](https://github.com/9ssi7/papara/issues/4)
 
 ### Installation
 
