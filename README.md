@@ -1,0 +1,1 @@
+# papara rest client for golang
