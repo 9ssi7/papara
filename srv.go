@@ -1,3 +1,4 @@
+// Package papara provides functions for interacting with the Papara API.
 package papara
 
 import (
@@ -10,17 +11,37 @@ import (
 	"github.com/goccy/go-json"
 )
 
+// Service interface defines the methods for interacting with the Papara API.
 type Service interface {
+
+	// Account method retrieves the account information for the current user.
 	Account() (*AccountResult, error)
+
+	// AccountLedgers method retrieves the account ledger for the current user.
 	AccountLedgers(req AccountLedgersFilterRequest) (*AccountLedgersResult, error)
+
+	// AccountSettlement method retrieves the account settlement for the current user.
 	AccountSettlement(req AccountSettlementRequest) (*AccountSettlementResult, error)
+
+	// ValidateWithAccountNumber method validates an account with an account number.
 	ValidateWithAccountNumber(accountNumber int) (*ValidationResult, error)
+
+	// ValidateWithPhoneNumber method validates a account with a phone number.
 	ValidateWithPhoneNumber(phoneNumber string) (*ValidationResult, error)
+
+	// ValidateWithTckn method validates a account with a Turkish national ID.
 	ValidateWithTckn(tckn string) (*ValidationResult, error)
 
+	// CreatePayment method creates a new payment.
 	CreatePayment(req PaymentCreateRequest) (*PaymentCreateResult, error)
+
+	// GetPayment method retrieves a payment by ID.
 	GetPayment(paymentId string) (*PaymentGetResult, error)
+
+	// CancelPayment method cancels a payment by ID.
 	CancelPayment(paymentId string) (*BasicResult, error)
+
+	// RefundPayment method refunds a payment.
 	RefundPayment(req PaymentRefundRequest) (*BasicResult, error)
 }
 
@@ -29,6 +50,7 @@ type service struct {
 	apiUrl string
 }
 
+// New function creates a new Papara client.
 func New(cnf Config) Service {
 	return &service{
 		apiKey: cnf.ApiKey,

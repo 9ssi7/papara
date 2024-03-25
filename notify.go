@@ -1,5 +1,9 @@
+// Package papara provides functions for interacting with the Papara API.
 package papara
 
+// PaymentResultNotification is a struct representing a payment result notification from Papara.
+// Papara calls the notification URL with this struct when a payment is completed.
+// If papara does not call the notification URL, the payment is not considered complete.
 type PaymentResultNotification struct {
 	MerchantId               string  `json:"merchantId"`
 	UserId                   string  `json:"userId"`

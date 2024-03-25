@@ -1,5 +1,7 @@
+// Package papara provides functions for interacting with the Papara API.
 package papara
 
+// AccountResultData is a struct representing account data returned by the Papara API.
 type AccountResultData struct {
 	ID       string `json:"id"`
 	Balances []struct {
@@ -35,12 +37,14 @@ type AccountResultData struct {
 	AtmDepositEnabled                      bool `json:"atmDepositEnabled"`
 }
 
+// AccountResult is a struct representing the complete account result from the Papara API.
 type AccountResult struct {
 	Data      *AccountResultData `json:"data"`
 	Succeeded bool               `json:"succeeded"`
 	Error     *ErrorResult       `json:"error"`
 }
 
+// AccountLedgersResult is a struct representing the account ledger result from the Papara API.
 type AccountLedgersResult struct {
 	Data struct {
 		Items []struct {
